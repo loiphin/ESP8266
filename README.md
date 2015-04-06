@@ -8,10 +8,15 @@ Note that the HC-SR04 is being driven by the 5v rail and the ESP8266 is of cours
 
 My ESP-01 pins are assigned to:
 GPIO0 and GPIO2 are used for ECHO and TRIG on the HC-SR04.
+
 CH_PD is connected to Vcc (3.3v).
+
 GND is ground, duh.
+
 VCC is 3.3v.
+
 RST is not connected.
+
 UTXD and URXD connected to RX and TX of your USB UART (e.g. FTDI232L) for testing only.
 
 Change the SSID and PASSWORD to the real values in init.lua.
