@@ -2,8 +2,9 @@
 
 My crappy cobbling together of code for my ESP8266 module which uses a HC-SR04 ultrasonic sensor. This is a dirty hack together of code. Use as you wish. Don't cry if you think the code is shitty. 
 
-Change the SSID and PASSWORD to the real values in init.lua
-Change the GPIO pin assignments and YOUR_API_KEY for Notify My Android in hcsr04.lua
+Change the SSID and PASSWORD to the real values in init.lua.
+
+Change the GPIO pin assignments and YOUR_API_KEY for Notify My Android in hcsr04.lua.
 
 See my youtube video of an "Open Garage Door" notifier: https://www.youtube.com/watch?v=3zI72pZsJ4M
 
