@@ -1,5 +1,5 @@
-
---init.lua
+-- My crappy open garage door notifier.
+-- init.lua sets up the wifi connection then runs the notify() function every 60 seconds.
 
 print("Setting up WIFI...")
 wifi.setmode(wifi.STATION)
