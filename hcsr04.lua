@@ -52,6 +52,7 @@ function notify()
             conn:send("\r\n")
             n = 0
         else n = 1
+        end	
     else print("Door is closed")
     end
 end
