@@ -1,4 +1,5 @@
 
+n=0
 
 hcsr04 = {};
 
@@ -35,8 +36,8 @@ function hcsr04.init(pin_trig, pin_echo)
 	return self
 end
 
-n=0
-
+-- Check to see if the ultrasonic sensor measures less than 50cm. If there are two measurements in a row less than 50cm then send a notification.
+-- This prevents false positives, as insects may set off the sensor every now and then.
 function notify()
     if device.measure() < 50 then
         print("Door is Open")
@@ -49,6 +50,7 @@ function notify()
             conn:send("Accept: */*\r\n") 
             conn:send("User-Agent: Mozilla/4.0 (compatible; esp8266 Lua; Windows NT 5.1)\r\n") 
             conn:send("\r\n")
+            n = 0
         else n = 1
     else print("Door is closed")
     end
