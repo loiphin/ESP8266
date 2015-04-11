@@ -35,17 +35,21 @@ function hcsr04.init(pin_trig, pin_echo)
 	return self
 end
 
+n=0
+
 function notify()
     if device.measure() < 50 then
         print("Door is Open")
-        conn=net.createConnection(net.TCP, 0)  
-        conn:on("receive", function(conn, payload) print(payload)  end) 
-        conn:connect(80,"50.116.34.97")  
-        conn:send("GET /publicapi/notify?apikey=YOUR_API_KEY&application=ESP8266&event=G_DOOR_OPEN&description=Garage%20door%is%20open&priority=2\r\n HTTP/1.1\r\n") 
-        conn:send("Host: notifymyandroid.com\r\n")  
-        conn:send("Accept: */*\r\n") 
-        conn:send("User-Agent: Mozilla/4.0 (compatible; esp8266 Lua; Windows NT 5.1)\r\n") 
-        conn:send("\r\n")
+        if n = 1 then
+            conn=net.createConnection(net.TCP, 0)  
+            conn:on("receive", function(conn, payload) print(payload)  end) 
+            conn:connect(80,"50.116.34.97")  
+            conn:send("GET /publicapi/notify?apikey=YOUR_API_KEY&application=ESP8266&event=G_DOOR_OPEN&description=Garage%20door%is%20open&priority=2\r\n HTTP/1.1\r\n") 
+            conn:send("Host: notifymyandroid.com\r\n")  
+            conn:send("Accept: */*\r\n") 
+            conn:send("User-Agent: Mozilla/4.0 (compatible; esp8266 Lua; Windows NT 5.1)\r\n") 
+            conn:send("\r\n")
+        else n = 1
     else print("Door is closed")
     end
 end
